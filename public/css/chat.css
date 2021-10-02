@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.navbar {
+    height: 50px;
+    width: 100vw;
+    background-color: rgb(255, 136, 0);
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.navbar_wraper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.brand h2 {
+    font-weight: 100;
+    margin: 8px 0 10px 0;
+}
+
+.navMenu ul li {
+    display: inline-block;
+    margin: 15px 10px 10px 0;
+}
+
+.navMenu ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.hamburger {
+    display: none;
+}
+
+.hamburger_navMenu {
+    display: none;
+}
+
+.hamburger_navMenu {
+    display: none;
+    background-color: rgb(255, 136, 0);
+    padding: 1rem;
+}
+
+.hamburger_navMenu li {
+    list-style: none;
+    margin: 1rem;
+}
+
+.hamburger_navMenu li a {
+    text-decoration: none;
+    color: black;
+}
+
+.show {
+    display: block;
+}
+
+.main {
+    width: 100%;
+    height: 75%;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 10px;
+}
+
+.section1 {
+    box-sizing: border-box;
+    padding: 1rem;
+}
+
+.stream_section {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.myStream {
+    width: 400px;
+    height: 300px;
+    border: 1px solid black;
+}
+
+.otherStream {
+    width: 400px;
+    height: 300px;
+    border: 1px solid black;
+}
+
+.menus {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.menus i {
+    margin: 0 10px;
+    font-size: 1.5rem;
+}
+
+.cameraChange {
+    display: none;
+    width: 30px;
+    margin: 0 10px;
+    height: 30px;
+}
+
+.report_user {
+    width: 120px;
+    height: 20px;
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.section2 {
+    box-sizing: border-box;
+    padding: 1rem;
+    height: 500px;
+    overflow-y: scroll;
+}
+
+/* media queries------- */
+
+@media(max-width:700px) {
+    .navMenu {
+        display: none;
+    }
+    .hamburger {
+        display: block;
+        margin: 10px;
+    }
+    .hamburger i {
+        font-size: 1.5rem;
+    }
+    .main {
+        width: 100%;
+        margin-top: 10px;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .section1 {
+        box-sizing: border-box;
+        padding: 1rem;
+    }
+    .stream_section {
+        width: 90%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .myStream {
+        width: 100%;
+        height: 200px;
+        border: 1px solid black;
+        margin-bottom: 20px;
+        display: none;
+    }
+    .otherStream {
+        width: 100%;
+        height: 200px;
+        border: 1px solid black;
+    }
+    .menus {
+        width: 90%;
+        margin: 20px auto;
+        display: flex;
+        justify-content: center;
+    }
+    .menus i {
+        margin: 0 10px;
+        font-size: 1.5rem;
+    }
+    .cameraChange {
+        display: block;
+        margin: 0 10px;
+        width: 30px;
+        height: 30px;
+    }
+    .report_user {
+        width: 120px;
+        height: 20px;
+        margin: 20px auto;
+        display: flex;
+        justify-content: center;
+    }
+    .section2 {
+        height: 300px;
+        overflow-y: scroll;
+        box-sizing: border-box;
+        padding: 1rem;
+    }
+}

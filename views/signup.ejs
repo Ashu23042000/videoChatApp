@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="icon" href="data:;base64,=">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./css/signup.css">
+
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="container navbar_wraper">
+            <div class="brand">
+                <h2>AshApp</h2>
+            </div>
+            <div class="navMenu">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/signup">Signup</a> </li>
+                </ul>
+            </div>
+            <div class="hamburger">
+                <i class="fal fa-bars hamburger_img"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="hamburger_navMenu">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="login">Login</a></li>
+            <li><a href="/signup">SignUp</a></li>
+        </ul>
+    </div>
+
+    <div class="form">
+        <form action="/signup" method="POST" class="login-form">
+            <i class="fas fa-user-plus"></i>
+            <input type="text" class="user-input" placeholder="Username" name="name" required>
+            <input type="email" class="user-input" placeholder="Email" name="email" required>
+            <select name="level" class="selectBox" required>
+                <option value="">Select Level</option>
+                <option value="Low">Low</option>
+                <option value="Intermediate">Intermediate</option>
+                <option value="Advanced">Advanced</option>
+            </select>
+            <select name="profession" class="selectBox" required>
+                <option value="">Select Profession</option>
+                <option value="Student">Student</option>
+                <option value="Employee">Employee</option>
+                <option value="Other">Other</option>
+            </select>
+            <input type="password" class="user-input" placeholder="Password" name="password" required>
+            <input type="password" class="user-input" placeholder="Confirm Password" name="confirmPassword" required>
+            <button type="submit" class="btn">Signup</button>
+            <div class="option-1">
+                <p>Already Registered? <a href="#">Login</a></p>
+            </div>
+        </form>
+    </div>
+
+
+
+    <script src="./hamburger.js"></script>
+</body>
+
+</html>

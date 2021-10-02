@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.navbar {
+    height: 50px;
+    width: 100vw;
+    background-color: rgb(255, 136, 0);
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.navbar_wraper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.brand h2 {
+    font-weight: 100;
+    margin: 8px 0 10px 0;
+}
+
+.navMenu ul li {
+    display: inline-block;
+    margin: 15px 10px 10px 0;
+}
+
+.navMenu ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.hamburger {
+    display: none;
+}
+
+.hamburger_navMenu {
+    display: none;
+}
+
+.hamburger_navMenu {
+    display: none;
+    background-color: rgb(255, 136, 0);
+    padding: 1rem;
+}
+
+.hamburger_navMenu li {
+    list-style: none;
+    margin: 1rem;
+}
+
+.hamburger_navMenu li a {
+    text-decoration: none;
+    color: black;
+}
+
+.show {
+    display: block;
+}
+
+.main {
+    width: 80%;
+    margin: 20px auto;
+}
+
+.users_grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 30px;
+    row-gap: 20px;
+}
+
+.users {
+    /* background-color: rgb(255, 136, 0); */
+    box-sizing: border-box;
+    padding: 1rem;
+    box-shadow: 2px 2px 5px 2px #757474
+}
+
+.users div {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.users button {
+    width: 100%;
+    height: 22px;
+    margin-top: 15px;
+}
+
+@media(max-width:700px) {
+    .navMenu {
+        display: none;
+    }
+    .hamburger {
+        display: block;
+        margin: 10px;
+    }
+    .hamburger i {
+        font-size: 1.5rem;
+    }
+    .main {
+        width: 100%;
+    }
+    .users_grid {
+        width: 90%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: 10px;
+        row-gap: 30px;
+    }
+    .users {
+        box-sizing: border-box;
+        padding: 0.5rem;
+    }
+    .users div {
+        margin-top: 15px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .users button {
+        width: 100%;
+        height: 25px;
+        margin-top: 15px;
+    }
+}

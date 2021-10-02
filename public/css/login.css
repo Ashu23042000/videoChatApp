@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.navbar {
+    height: 50px;
+    width: 100vw;
+    background-color: rgb(255, 136, 0);
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.navbar_wraper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.brand h2 {
+    font-weight: 100;
+    margin: 8px 0 10px 0;
+}
+
+.navMenu ul li {
+    display: inline-block;
+    margin: 15px 10px 10px 0;
+}
+
+.navMenu ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.hamburger {
+    display: none;
+}
+
+.hamburger_navMenu {
+    display: none;
+}
+
+.hamburger_navMenu {
+    display: none;
+    background-color: rgb(255, 136, 0);
+    padding: 1rem;
+}
+
+.hamburger_navMenu li {
+    list-style: none;
+    margin: 1rem;
+}
+
+.hamburger_navMenu li a {
+    text-decoration: none;
+    color: black;
+}
+
+.show {
+    display: block;
+}
+
+.form {
+    z-index: 1;
+    width: 320px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.form i {
+    z-index: 1;
+    color: #ccc;
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+.form .user-input {
+    width: 320px;
+    height: 35px;
+    margin-bottom: 30px;
+    outline: none;
+    border: none;
+    background: rgba(170, 159, 159, 0.2);
+    color: black;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.form .option-1 {
+    margin-bottom: 35px;
+}
+
+.form .option-1 a {
+    color: black;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.form .btn {
+    outline: none;
+    border: none;
+    width: 320px;
+    height: 35px;
+    background: green;
+    color: white;
+    font-size: 16px;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+
+@media(max-width:700px) {
+    .navMenu {
+        display: none;
+    }
+    .hamburger {
+        display: block;
+        margin: 10px;
+    }
+    .hamburger i {
+        font-size: 1.1rem;
+    }
+    .form {
+        width: 90%;
+        margin-top: 40px;
+    }
+    .form .user-input {
+        width: 100%;
+    }
+    .form .btn {
+        width: 100%;
+    }
+    .form i {
+        margin-bottom: 25px;
+        font-size: 55px;
+    }
+    .form .option-1 {
+        margin-bottom: 30px;
+    }
+}
