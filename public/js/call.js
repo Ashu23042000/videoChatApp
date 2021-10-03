@@ -72,3 +72,18 @@ navigator.mediaDevices.getUserMedia({
 peer.on("open", (id) => {
     socket.emit("join_room", roomId, id);
 });
+
+
+
+
+const mike = document.querySelector(".mike");
+mike.addEventListener("click", () => {
+    navigator.mediaDevices.getUserMedia({ audio: false });
+    console.log("click");
+});
+
+const camera = document.querySelector(".camera");
+camera.addEventListener("click", () => {
+    navigator.mediaDevices.getUserMedia({ video: false });
+    console.log("click");
+});

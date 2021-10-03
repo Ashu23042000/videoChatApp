@@ -89,6 +89,7 @@ let live_user = 0;
 
 let usersConnected = {};
 
+// socket.io part-------------------------
 
 io.on("connection", (socket) => {
     socket.on("newUser", (id) => {
@@ -138,8 +139,6 @@ io.on("connection", (socket) => {
     socket.on("answer", (data) => {
         io.to(data.from).emit("requestReply", data);
     })
-
-
 
 
     // emitting signuped user to admin------
