@@ -17,6 +17,8 @@ myVideo.muted = true;
 myVideo.classList.add("myStream");
 
 
+
+
 function addVideoStream(video, stream) {
     video.srcObject = stream;
     video.addEventListener("loadedmetadata", () => {
@@ -46,7 +48,6 @@ navigator.mediaDevices.getUserMedia({
     audio: true
 }).then((stream) => {
     addVideoStream(myVideo, stream);
-
     peer.on("call", (call) => {
         call.answer(stream);
         const video = document.createElement("video");
@@ -78,12 +79,12 @@ peer.on("open", (id) => {
 
 const mike = document.querySelector(".mike");
 mike.addEventListener("click", () => {
-    navigator.mediaDevices.getUserMedia({ audio: false });
+    myVideo.play();
     console.log("click");
 });
 
 const camera = document.querySelector(".camera");
 camera.addEventListener("click", () => {
-    navigator.mediaDevices.getUserMedia({ video: false });
+    myVideo.pause();
     console.log("click");
 });
