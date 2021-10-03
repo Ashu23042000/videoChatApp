@@ -132,7 +132,7 @@ io.on("connection", (socket) => {
 
     // getting the call request from user and sending it to other user------
     socket.on("callRequest", (data) => {
-        io.to(data.toUserId).emit("callFromOther", { from: data.from, fromUserName: data.fromUserName });
+        socket.to(data.toUserId).emit("callFromOther", { from: data.from, fromUserName: data.fromUserName });
     });
 
     // sending request reply to user----

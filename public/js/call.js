@@ -80,11 +80,13 @@ peer.on("open", (id) => {
 const mike = document.querySelector(".mike");
 mike.addEventListener("click", () => {
     myVideo.play();
-    console.log("click");
+    console.log("video on");
 });
 
 const camera = document.querySelector(".camera");
 camera.addEventListener("click", () => {
     myVideo.pause();
-    console.log("click");
+    vid.src = "";
+    localstream.getTracks()[0].stop();
+    console.log("video off");
 });
