@@ -31,12 +31,13 @@ socket.on("connectedUsers", (data) => {
 
 
 // calling another user----
-function call(toUserId, from, fromUserName) {
+function call(data) {
     // console.log(`Call request sending to ${toUserId}`);
     // const userSocketId = document.querySelector("#userSocketId").value;
     // console.log(userSocketId);
-    console.log(toUserId);
-    socket.emit("callRequest", { toUserId, from, fromUserName });
+    console.log(data);
+    socket.emit("callRequest", { toUserId: data.key, from: data.from, fromUserName: data.fromUserName });
+    // socket.emit("callRequest", { toUserId, from, fromUserName });
 };
 
 
@@ -144,9 +145,9 @@ function showConnectedUsers(data) {
     callBtns.forEach((btn) => {
         btn.addEventListener("click", () => {
             // console.log(JSON.parse(btn.innerHTML))
-            let a = btn.lastElementChild.value
-            console.log(JSON.parse(a));
-
+            // let a = btn.lastElementChild.value
+            // console.log(JSON.parse(a));
+            call(JSON.parse(btn.lastElementChild.value));
         });
         console.log(btn);
 
