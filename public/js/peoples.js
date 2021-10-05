@@ -36,7 +36,7 @@ function call(toUserId, from, fromUserName) {
     // const userSocketId = document.querySelector("#userSocketId").value;
     // console.log(userSocketId);
     console.log(toUserId);
-    // socket.emit("callRequest", { toUserId, from, fromUserName });
+    socket.emit("callRequest", { toUserId, from, fromUserName });
 };
 
 
