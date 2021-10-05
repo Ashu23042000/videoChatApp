@@ -68,13 +68,9 @@ navigator.mediaDevices.getUserMedia({
     console.log(err);
 });
 
-
-
 peer.on("open", (id) => {
     socket.emit("join_room", roomId, id);
 });
-
-
 
 
 const mike = document.querySelector(".mike");
@@ -90,3 +86,14 @@ camera.addEventListener("click", () => {
     localstream.getTracks()[0].stop();
     console.log("video off");
 });
+
+
+// report user-----------------
+
+// const report_user = document.querySelector(".report_user");
+// report_user.addEventListener("onclick", () => {
+//     let ans = confirm("Do you want report this user");
+//     if(ans){
+//         let res=fetch("/report")
+//     }
+// })

@@ -48,16 +48,19 @@
         <input type="hidden" value="<%=user.profession%>" class="profession">
         <input type="hidden" value="<%=user.level%>" class="level">
         <input type="hidden" value="<%=user._id%>" class="userId">
-
         <div class="users_grid">
-            
         </div>
     </div>
 
-
+    <script>
+    </script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="./js/hamburger.js"></script>
     <script src="./js/peoples.js"></script>
 </body>
 
 </html>
+
+
+
+socket.emit("callRequest", { toUserId: data.key, from: data.from, fromUserName: data.fromUserName });

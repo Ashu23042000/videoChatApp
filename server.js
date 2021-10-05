@@ -76,13 +76,13 @@ http.listen(port, () => {
 const io = require("socket.io")(http);
 const users_online = [];
 
-let to;
-let from;
+// let to;
+// let from;
 
-eventEmitter.on("getData", (data) => {
-    to = data.to;
-    from = data.from;
-});
+// eventEmitter.on("getData", (data) => {
+//     to = data.to;
+//     from = data.from;
+// });
 
 
 let live_user = 0;
@@ -92,6 +92,7 @@ let usersConnected = {};
 // socket.io part-------------------------
 
 io.on("connection", (socket) => {
+    // console.log(socket.id);
     socket.on("newUser", (id) => {
         socket.broadcast.emit("userJoined", id);
     });
@@ -123,6 +124,8 @@ io.on("connection", (socket) => {
 
     // broadcasting all users details to user--
     socket.on("userConnected", (data) => {
+        // console.log(data);
+        data.socketId = socket.id;
         if (!usersConnected[data.user_id]) {
             usersConnected[socket.id] = data;
             io.emit("connectedUsers", usersConnected);
@@ -132,7 +135,7 @@ io.on("connection", (socket) => {
 
     // getting the call request from user and sending it to other user------
     socket.on("callRequest", (data) => {
-        socket.to(data.toUserId).emit("callFromOther", { from: data.from, fromUserName: data.fromUserName });
+        io.to(data.toUserId).emit("callFromOther", { from: data.from, fromUserName: data.fromUserName });
     });
 
     // sending request reply to user----

@@ -18,32 +18,46 @@ const userData = {
 }
 
 
+
 // sending data to server------
 
 socket.emit("userConnected", userData);
 
 // getting connected users details from server----
-
 socket.on("connectedUsers", (data) => {
+    console.log(data);
     showConnectedUsers(data);
 });
 
 
 // calling another user----
 function call(toUserId, from, fromUserName) {
-    socket.emit("callRequest", { toUserId, from, fromUserName });
+    // console.log(`Call request sending to ${toUserId}`);
+    // const userSocketId = document.querySelector("#userSocketId").value;
+    // console.log(userSocketId);
+    console.log(toUserId);
+    // socket.emit("callRequest", { toUserId, from, fromUserName });
 };
 
 
 
 function showConnectedUsers(data) {
     users_grid.innerHTML = " ";
-    for (let key of Object.keys(data)) {
-        if (data[key].user_id == user_id) {
-            from = key;
-            fromUserName = data[key].user__name;
-        }
+
+
+
+
+    Object.keys(data).forEach((key) => {
+
+        Object.keys(data).forEach((key) => {
+            if (data[key].user_id == user_id) {
+                from = key;
+                fromUserName = data[key].user__name;
+            }
+        })
+
         if (data[key].user_id != user_id) {
+            // console.log(`Connected sockets ${key}`)
             const userDiv = document.createElement("div");
             userDiv.classList.add("users");
             userDiv.innerHTML = ` <h2>
@@ -57,12 +71,90 @@ function showConnectedUsers(data) {
                         ${data[key].user_level}
                         </span>
                     </div>
-                    <button ${onclick = function () { call(key, from, fromUserName) }}>Start Conversation</button>`;
-
+                
+                 <button class="callBtn">
+                  <span>Call</span>
+                  <input value=${JSON.stringify({ key: key, from: from, fromUserName: fromUserName })} type="hidden"></input>
+                  </button>
+                    `;
             users_grid.appendChild(userDiv);
+            // ${ onclick = call }
+            // const callBtn = document.querySelector(".callBtn");
+            // callBtn.onclick =
+
+
+            //     addEventListener('click', () => {
+            //         // call(data[key].socketId, from, fromUserName);
+            //         console.log(`clicked on ${data[key].socketId}`)
+            //     })
         }
-    }
+
+    });
+
+    // < id="callBtn" ${onclick = function () {
+    //     console.log(`clicked on ${data[key].socketId}`);
+    //     call(data[key].socketId, from, fromUserName)
+    // }} Start Conversation</ button>
+
+    // <button id="callBtn">Call</button>
+
+
+    // <input type="hidden" value=${from} class="from">
+    //     <input type="hidden" value=${fromUserName} id="fromUserName">
+    //         <input type="hidden" value=${key} id="userSocketId">
+
+
+
+
+
+    // for (let key of Object.keys(data)) {
+    //     if (data[key].user_id == user_id) {
+    //         from = key;
+    //         fromUserName = data[key].user__name;
+    //     }
+    //     if (data[key].user_id != user_id) {
+    //         console.log(`Connected sockets ${key}`)
+    //         const userDiv = document.createElement("div");
+    //         userDiv.classList.add("users");
+    //         userDiv.innerHTML = ` <h2>
+    //                     ${data[key].user__name}
+    //                 </h2>
+    //                 <div>
+    //                     <span>
+    //                        ${data[key].user_profession}
+    //                     </span>
+    //                     <span>
+    //                     ${data[key].user_level}
+    //                     </span>
+    //                 </div>
+    //                 <button ${onclick = function (event) {
+    //                 event.preventDefault();
+    //                 console.log(`clicked on ${key}`);
+    //                 call(key, from, fromUserName)
+    //             }}>Start Conversation</button>`;
+
+    //         users_grid.appendChild(userDiv);
+    //     }
+    // }
+
+
+
+
+    const callBtns = document.querySelectorAll(".callBtn");
+    callBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            // console.log(JSON.parse(btn.innerHTML))
+            let a = btn.lastElementChild.value
+            console.log(JSON.parse(a));
+
+        });
+        console.log(btn);
+
+    })
 }
+
+
+
 
 // accepting or decline call request----
 socket.on("callFromOther", async (data) => {
