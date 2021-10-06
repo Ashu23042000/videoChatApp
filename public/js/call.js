@@ -6,7 +6,6 @@ const hamburger_navMenu = document.querySelector(".hamburger_navMenu");
 hamburger.addEventListener("click", () => {
     hamburger_navMenu.classList.toggle("show");
 });
-
 console.log(roomId);
 
 
@@ -42,11 +41,12 @@ function connectToOtherUser(userId, stream) {
     });
 };
 
-
+var myStream;
 navigator.mediaDevices.getUserMedia({
     video: true,
     audio: true
 }).then((stream) => {
+
     addVideoStream(myVideo, stream);
     peer.on("call", (call) => {
         call.answer(stream);
@@ -64,28 +64,32 @@ navigator.mediaDevices.getUserMedia({
         connectToOtherUser(userId, stream);
     });
 
+
+
+    const mikeoff = document.querySelector(".mikeoff");
+
+    mikeoff.addEventListener("click", () => {
+        stream.getAudioTracks().forEach(track => track.enabled = !track.enabled);
+    });
+
+    const videooff = document.querySelector(".videooff");
+    videooff.addEventListener("click", () => {
+        stream.getVideoTracks().forEach(track => track.enabled = !track.enabled);
+    });
+
+
 }).catch((err) => {
     console.log(err);
 });
+
 
 peer.on("open", (id) => {
     socket.emit("join_room", roomId, id);
 });
 
 
-const mike = document.querySelector(".mike");
-mike.addEventListener("click", () => {
-    myVideo.play();
-    console.log("video on");
-});
 
-const camera = document.querySelector(".camera");
-camera.addEventListener("click", () => {
-    myVideo.pause();
-    vid.src = "";
-    localstream.getTracks()[0].stop();
-    console.log("video off");
-});
+
 
 
 // report user-----------------
