@@ -175,4 +175,11 @@
         font-weight: 100;
         font-size: 35px;
     }
+    .footer_block {
+        margin-top: 2rem;
+        position: relative;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
 }
