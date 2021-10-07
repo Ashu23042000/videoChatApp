@@ -84,13 +84,13 @@
 }
 
 .myStream {
-    width: 550px;
+    width: 50%;
     height: 300px;
-    /* border: 1px solid black; */
+    border: 1px solid black;
 }
 
 .otherStream {
-    width: 550px;
+    width: 50%;
     height: 300px;
     /* border: 1px solid black; */
 }
@@ -212,8 +212,8 @@
         display: none;
     }
     .otherStream {
-        width: 550px;
-        height: 200px;
+        width: 100%;
+        height: auto;
         /* border: none; */
     }
     .menus {
