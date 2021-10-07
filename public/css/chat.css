@@ -90,7 +90,7 @@
 }
 
 .otherStream {
-    width: 400px;
+    width: 500px;
     height: 300px;
     border: 1px solid black;
 }
@@ -212,7 +212,7 @@
         display: none;
     }
     .otherStream {
-        width: 100%;
+        width: 150%;
         height: 200px;
         border: none;
     }
@@ -252,4 +252,5 @@
         right: 0;
         bottom: 0;
     }
+    
 }

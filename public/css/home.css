@@ -75,6 +75,8 @@
     background-size: cover;
     width: 50%;
     margin-left: 4rem;
+    box-sizing: border-box;
+    padding-left: 0.5rem;
 }
 
 .backImg img {
@@ -176,7 +178,7 @@
         font-size: 35px;
     }
     .footer_block {
-        margin-top: 2rem;
+        margin-top: 1.5rem;
         position: relative;
         left: 0;
         right: 0;
