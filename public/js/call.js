@@ -65,18 +65,25 @@ navigator.mediaDevices.getUserMedia({
     });
 
 
+    // video audio controls---------------
+    const mikeon = document.querySelector(".mikeon");
 
-    const mikeoff = document.querySelector(".mikeoff");
-
-    mikeoff.addEventListener("click", () => {
+    mikeon.addEventListener("click", () => {
         stream.getAudioTracks().forEach(track => track.enabled = !track.enabled);
+
+        mikeon.classList.toggle("showClick");
+
     });
 
-    const videooff = document.querySelector(".videooff");
-    videooff.addEventListener("click", () => {
+
+    const videoon = document.querySelector(".videoon");
+
+    videoon.addEventListener("click", () => {
         stream.getVideoTracks().forEach(track => track.enabled = !track.enabled);
-    });
 
+        videoon.classList.toggle("showClick");
+
+    });
 
 }).catch((err) => {
     console.log(err);
@@ -87,17 +94,3 @@ peer.on("open", (id) => {
     socket.emit("join_room", roomId, id);
 });
 
-
-
-
-
-
-// report user-----------------
-
-// const report_user = document.querySelector(".report_user");
-// report_user.addEventListener("onclick", () => {
-//     let ans = confirm("Do you want report this user");
-//     if(ans){
-//         let res=fetch("/report")
-//     }
-// })

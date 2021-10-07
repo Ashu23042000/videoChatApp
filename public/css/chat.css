@@ -157,6 +157,24 @@
     padding: 0 5px;
 }
 
+.showClick {
+    /* color: orangered; */
+    display: block;
+}
+
+.removeClick {
+    /* color: green; */
+    display: none;
+}
+
+.mikeoff {
+    display: none;
+}
+
+.videooff {
+    display: none;
+}
+
 /* media queries------- */
 
 @media(max-width:700px) {

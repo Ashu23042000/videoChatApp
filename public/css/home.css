@@ -1,20 +1,178 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
-.videoGrid {
-    display: grid;
-    position: relative;
-    grid-template-columns: repeat(auto-fill, 100px);
-    grid-auto-rows: 100px;
-    grid-gap: 10px;
-    height: 60%;
+.navbar {
+    height: 50px;
+    width: 100vw;
+    background-color: rgb(255, 136, 0);
 }
 
-.video {
-    width: 100px;
-    height: 50%;
-    object-fit: cover;
-    border: 1px solid black;
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.navbar_wraper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.brand h2 {
+    font-weight: 100;
+    margin: 8px 0 10px 0;
+}
+
+.navMenu ul li {
+    display: inline-block;
+    margin: 15px 10px 10px 0;
+}
+
+.navMenu ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.hamburger {
+    display: none;
+}
+
+.hamburger_navMenu {
+    display: none;
+}
+
+.hamburger_navMenu {
+    display: none;
+    background-color: rgb(255, 136, 0);
+    padding: 1rem;
+}
+
+.hamburger_navMenu li {
+    list-style: none;
+    margin: 1rem;
+}
+
+.hamburger_navMenu li a {
+    text-decoration: none;
+    color: black;
+}
+
+.show {
+    display: block;
+}
+
+.main {
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.backImg {
+    height: 85vh;
+    background-size: cover;
+    width: 50%;
+    margin-left: 4rem;
+}
+
+.backImg img {
+    margin-top: 30px;
+    width: 650px;
+    height: 90%;
+}
+
+.sideContent {
+    width: 40%;
+    box-sizing: border-box;
+    padding-top: 140px;
+}
+
+.sideContent h1 {
+    margin-bottom: 2rem;
+    font-weight: 100;
+    font-size: 50px;
+}
+
+.sideContent p {
+    margin-bottom: 2rem;
+    font-weight: 100;
+    font-size: 20px;
+    padding-right: 2rem;
+}
+
+.sideContent button {
+    padding: 0.5rem 3rem;
+    background-color: rgb(255, 136, 0);
+    border: none;
+    border-radius: 5px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.sideContent button a {
+    text-decoration: none;
+    color: black;
+}
+
+.footer_block {
+    max-width: 100%;
+    height: 40px;
+    margin: 45px auto 0 auto;
+    background-color: rgb(255, 136, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.footer_block i {
+    color: black;
+    font-size: 20px;
+    padding: 0 5px;
+}
+
+/* media queries------- */
+
+@media(max-width:700px) {
+    .navMenu {
+        display: none;
+    }
+    .hamburger {
+        display: block;
+        margin: 10px;
+    }
+    .hamburger i {
+        font-size: 1.5rem;
+    }
+    .main {
+        display: block;
+        height: 90vh;
+    }
+    .backImg {
+        width: 100vw;
+        height: 50%;
+        margin-left: 0;
+    }
+    .backImg img {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        margin-top: 10px;
+    }
+    .sideContent {
+        width: 100%;
+        height: 50%;
+        box-sizing: border-box;
+        padding: 1rem;
+    }
+    .sideContent h1 {
+        margin-bottom: 2rem;
+        font-weight: 100;
+        font-size: 35px;
+    }
 }
