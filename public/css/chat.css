@@ -214,7 +214,7 @@
     .otherStream {
         width: 550px;
         height: 200px;
-        border: none;
+        /* border: none; */
     }
     .menus {
         width: 90%;
