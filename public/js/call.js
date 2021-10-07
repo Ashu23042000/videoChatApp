@@ -14,7 +14,7 @@ const stream_section = document.querySelector(".stream_section");
 const myVideo = document.createElement("video");
 myVideo.muted = true;
 myVideo.classList.add("myStream");
-myVideo.width = 200;
+myVideo.width = 550;
 myVideo.height = 200;
 
 
@@ -34,12 +34,10 @@ function addVideoStream(video, stream) {
 function connectToOtherUser(userId, stream) {
     const call = peer.call(userId, stream);
     const video = document.createElement("video");
-    video.height = 550;
+    video.height = 200;
     video.width = 550;
     video.classList.add("otherStream");
     call.on("stream", (userVideoStream) => {
-        video.height = 200;
-        video.width = 200;
         addVideoStream(video, userVideoStream);
     });
     call.on("close", () => {
@@ -58,7 +56,7 @@ navigator.mediaDevices.getUserMedia({
         const video = document.createElement("video");
         video.classList.add("otherStream");
         call.on("stream", (userVideoStream) => {
-            video.height = 550;
+            video.height = 200;
             video.width = 550;
             addVideoStream(video, userVideoStream);
         });

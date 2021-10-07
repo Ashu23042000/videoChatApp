@@ -84,15 +84,15 @@
 }
 
 .myStream {
-    width: 400px;
+    width: 550px;
     height: 300px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 .otherStream {
-    width: 500px;
+    width: 550px;
     height: 300px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 .menus {
@@ -205,14 +205,14 @@
         grid-template-columns: 1fr;
     }
     .myStream {
-        width: 100px;
+        width: 550px;
         height: 200px;
         /* border: 1px solid black; */
         margin-bottom: 20px;
         display: none;
     }
     .otherStream {
-        width: 100px;
+        width: 550px;
         height: 200px;
         border: none;
     }
