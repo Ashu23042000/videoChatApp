@@ -4,7 +4,7 @@ const bcrypt = require("bcryptjs");
 const userModel = require("../models/userModel");
 
 router.get("/", (req, res) => {
-    res.render("login");
+    res.render("login", { flag: "" });
 });
 
 router.post("/", async (req, res) => {
@@ -15,13 +15,14 @@ router.post("/", async (req, res) => {
         const comparePassword = await bcrypt.compare(password, getUser.password);
         if (comparePassword) {
             req.session.user = getUser;
-            res.redirect("/people");
+            // res.redirect("/people");
+            res.render("peoples", { flag: 5, user: req.session.user })
         } else {
-            res.render("login", { message: "Password not match" });
+            res.render("login", { message: "Password not match", flag: 2 });
         }
     }
     else {
-        res.render("login", { message: "Can't get user" });
+        res.render("login", { message: "Can't get user", flag: 3 });
     }
 
 });

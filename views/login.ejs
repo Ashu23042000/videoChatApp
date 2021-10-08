@@ -11,7 +11,9 @@
     <link rel="icon" href="data:;base64,=">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="./css/login.css">
+
 
 </head>
 
@@ -42,24 +44,68 @@
         </ul>
     </div>
 
-    <div class="form">
-        <form action="/login" method="POST" class="login-form">
-            <i class="fas fa-user-circle"></i>
-            <input type="email" class="user-input" placeholder="Email" name="email" required>
-            <input type="password" class="user-input" placeholder="Password" name="password" required>
-            <div class="option-1">
-                <a href="#">Forgot Password</a>
-            </div>
-            <button type="submit" class="btn">Login</button>
-            <div class="option-2">
-                <p>Not Registered ? <a href="/signup">Create an Account</a></p>
-            </div>
-        </form>
-    </div>
+    <% if (flag==1 ) { %>
+        <script>
+            swal({
+                title: "Signup Successful",
+                text: "Login Now",
+                icon: "success",
+                button: "Ok",
+            });
+        </script>
+        <% } else if(flag==2){%>
+
+            <script>
+                swal({
+                    title: "Login Failed",
+                    text: "Password is not match",
+                    icon: "error",
+                    button: "Ok",
+                });
+            </script>
+
+            <%} else if(flag==3){%>
+
+                <script>
+                    swal({
+                        title: "Login Failed",
+                        text: "Can't get user",
+                        icon: "error",
+                        button: "Ok",
+                    });
+                </script>
+
+                <%} else if(flag==4){%>
+
+                    <script>
+                        swal({
+                            title: "Signup Failed",
+                            text: "Email already register",
+                            icon: "error",
+                            button: "Ok",
+                        });
+                    </script>
+
+                    <%}%>
+
+                        <div class="form">
+                            <form action="/login" method="POST" class="login-form">
+                                <i class="fas fa-user-circle"></i>
+                                <input type="email" class="user-input" placeholder="Email" name="email" required>
+                                <input type="password" class="user-input" placeholder="Password" name="password"
+                                    required>
+                                <div class="option-1">
+                                    <a href="#">Forgot Password</a>
+                                </div>
+                                <button type="submit" class="btn">Login</button>
+                                <div class="option-2">
+                                    <p>Not Registered ? <a href="/signup">Create an Account</a></p>
+                                </div>
+                            </form>
+                        </div>
 
 
-
-    <script src="./js/hamburger.js"></script>
+                        <script src="./js/hamburger.js"></script>
 </body>
 
 </html>

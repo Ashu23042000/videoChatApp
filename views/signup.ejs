@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="./css/signup.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 
 </head>
 
@@ -42,35 +44,81 @@
         </ul>
     </div>
 
-    <div class="form">
-        <form action="/signup" method="POST" class="login-form">
-            <i class="fas fa-user-plus"></i>
-            <input type="text" class="user-input" placeholder="Username" name="name" required>
-            <input type="email" class="user-input" placeholder="Email" name="email" required>
-            <select name="level" class="selectBox" required>
-                <option value="">Select Level</option>
-                <option value="Low">Low</option>
-                <option value="Intermediate">Intermediate</option>
-                <option value="Advanced">Advanced</option>
-            </select>
-            <select name="profession" class="selectBox" required>
-                <option value="">Select Profession</option>
-                <option value="Student">Student</option>
-                <option value="Employee">Employee</option>
-                <option value="Other">Other</option>
-            </select>
-            <input type="password" class="user-input" placeholder="Password" name="password" required>
-            <input type="password" class="user-input" placeholder="Confirm Password" name="confirmPassword" required>
-            <button type="submit" class="btn">Signup</button>
-            <div class="option-1">
-                <p>Already Registered? <a href="/login">Login</a></p>
-            </div>
-        </form>
-    </div>
+    <% if (flag==1 ) { %>
+        <script>
+            swal({
+                title: "Signup Successful",
+                text: "Login Now",
+                icon: "success",
+                button: "Ok",
+            });
+        </script>
+        <% } else if(flag==2){%>
+
+            <script>
+                swal({
+                    title: "Login Failed",
+                    text: "Password is not match",
+                    icon: "error",
+                    button: "Ok",
+                });
+            </script>
+
+            <%} else if(flag==3){%>
+
+                <script>
+                    swal({
+                        title: "Login Failed",
+                        text: "Can't get user",
+                        icon: "error",
+                        button: "Ok",
+                    });
+                </script>
+
+                <%} else if(flag==4){%>
+
+                    <script>
+                        swal({
+                            title: "Signup Failed",
+                            text: "Email already register",
+                            icon: "error",
+                            button: "Ok",
+                        });
+                    </script>
+
+                    <%}%>
 
 
+                        <div class="form">
+                            <form action="/signup" method="POST" class="login-form">
+                                <i class="fas fa-user-plus"></i>
+                                <input type="text" class="user-input" placeholder="Username" name="name" required>
+                                <input type="email" class="user-input" placeholder="Email" name="email" required>
+                                <select name="level" class="selectBox" required>
+                                    <option value="">Select Level</option>
+                                    <option value="Low">Low</option>
+                                    <option value="Intermediate">Intermediate</option>
+                                    <option value="Advanced">Advanced</option>
+                                </select>
+                                <select name="profession" class="selectBox" required>
+                                    <option value="">Select Profession</option>
+                                    <option value="Student">Student</option>
+                                    <option value="Employee">Employee</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                                <input type="password" class="user-input" placeholder="Password" name="password"
+                                    required>
+                                <input type="password" class="user-input" placeholder="Confirm Password"
+                                    name="confirmPassword" required>
+                                <button type="submit" class="btn">Signup</button>
+                                <div class="option-1">
+                                    <p>Already Registered? <a href="/login">Login</a></p>
+                                </div>
+                            </form>
+                        </div>
 
-    <script src="./js/hamburger.js"></script>
+
+                        <script src="./js/hamburger.js"></script>
 </body>
 
 </html>

@@ -4,7 +4,7 @@ const bcrypt = require("bcryptjs");
 const userModel = require("../models/userModel");
 
 router.get("/", (req, res) => {
-    res.render("signup");
+    res.render("signup", { flag: "" });
 });
 
 
@@ -14,7 +14,7 @@ router.post("/", async (req, res) => {
     if (password == confirmPassword) {
         const getUser = await userModel.findOne({ email });
         if (getUser) {
-            res.render("signup", { message: "Email already registered" });
+            res.render("signup", { message: "Email already registered", flag: 3 });
         }
         else {
             const hashpassword = await bcrypt.hash(password, 10);
@@ -23,10 +23,10 @@ router.post("/", async (req, res) => {
             // const count = await userModel.countDocuments();
             // const eventEmitter = req.app.get("eventEmitter");
             // eventEmitter.emit("user_signup", count)
-            res.redirect("/login");
+            res.render("login", { flag: 1 });
         }
     } else {
-        res.render("signup", { message: "Password not match" });
+        res.render("signup", { message: "Password not match", flag: 2 });
     }
 });
 

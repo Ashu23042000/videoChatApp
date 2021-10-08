@@ -213,7 +213,7 @@
     }
     .otherStream {
         width: 100%;
-        height: auto;
+        height: 200px;
         /* border: none; */
     }
     .menus {

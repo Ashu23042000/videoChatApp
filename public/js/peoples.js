@@ -100,7 +100,10 @@ function showConnectedUsers(data) {
 
 // accepting or decline call request----
 socket.on("callFromOther", async (data) => {
-    let answer = confirm(`${data.fromUserName} calling  you`);
+    // let answer = confirm(`${data.fromUserName} calling  you`);
+    let answer = await swal(`${data.fromUserName} wants to talk with you.`, {
+        buttons: ["Decline", "Accept"],
+    });
 
     if (answer) {
         let res = await fetch(`/call/${data.from}`, { method: "GET" });
@@ -119,7 +122,10 @@ socket.on("requestReply", async (data) => {
         let res = await fetch(`/call/${data.from}`, { method: "GET" });
         window.location.href = res.url;
     } else {
-        alert(`Didn't answer you`);
+        swal("Didn't answer you", "", "error", {
+            button: "Ok",
+        });
+        // alert(`Didn't answer you`);
     }
 });
 

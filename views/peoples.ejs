@@ -11,6 +11,7 @@
     <link rel="icon" href="data:;base64,=">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="./css/people.css">
 
 </head>
@@ -24,8 +25,9 @@
             <div class="navMenu">
                 <ul>
                     <li><a href="/">Home</a></li>
-                    <li><a href="/login">Login</a></li>
-                    <li><a href="/register">Signup</a> </li>
+                    <!-- <li><a href="/login">Login</a></li> -->
+                    <!-- <li><a href="/signup">Signup</a> </li> -->
+                    <li><a href="/Logout">Logout</a> </li>
                 </ul>
             </div>
             <div class="hamburger">
@@ -43,22 +45,33 @@
     </div>
 
 
-    <div class="main">
-        <input type="hidden" value="<%=user.name%>" class="username">
-        <input type="hidden" value="<%=user.profession%>" class="profession">
-        <input type="hidden" value="<%=user.level%>" class="level">
-        <input type="hidden" value="<%=user._id%>" class="userId">
-        <div class="users_grid">
-        </div>
-    </div>
+    <% if(flag==5){%>
+        <script>
+            swal({
+                title: "Login Successful",
+                text: "You can start conversation with peoples now",
+                icon: "success",
+                button: "Ok",
+            });
+        </script>
 
-    <script>
-    </script>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="./js/hamburger.js"></script>
-    <script src="./js/peoples.js"></script>
+        <%}%>
+
+
+            <div class="main">
+                <input type="hidden" value="<%=user.name%>" class="username">
+                <input type="hidden" value="<%=user.profession%>" class="profession">
+                <input type="hidden" value="<%=user.level%>" class="level">
+                <input type="hidden" value="<%=user._id%>" class="userId">
+                <div class="users_grid">
+                </div>
+            </div>
+
+            <script>
+            </script>
+            <script src="/socket.io/socket.io.js"></script>
+            <script src="./js/hamburger.js"></script>
+            <script src="./js/peoples.js"></script>
 </body>
 
 </html>
-
-
