@@ -145,9 +145,9 @@ io.on("connection", (socket) => {
 
 
     // emitting signuped user to admin------
-    eventEmitter.on("user_signup", (data) => {
-        io.emit("user_signuped", data)
-    });
+    // eventEmitter.on("user_signup", (data) => {
+    //     io.emit("user_signuped", data)
+    // });
 });
 
 

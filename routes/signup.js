@@ -18,11 +18,11 @@ router.post("/", async (req, res) => {
         }
         else {
             const hashpassword = await bcrypt.hash(password, 10);
-            const user = new userModel({ name, email, password: hashpassword, level, profession });
+            const user = new userModel({ name, email, password: hashpassword, level, profession, reportCount: 0 });
             await user.save();
-            const count = await userModel.countDocuments();
-            const eventEmitter = req.app.get("eventEmitter");
-            eventEmitter.emit("user_signup", count)
+            // const count = await userModel.countDocuments();
+            // const eventEmitter = req.app.get("eventEmitter");
+            // eventEmitter.emit("user_signup", count)
             res.redirect("/login");
         }
     } else {
