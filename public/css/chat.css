@@ -118,6 +118,19 @@
     height: 30px;
 }
 
+.endCall {
+    text-decoration: none;
+    /* background-color: blue; */
+}
+
+.endCall button {
+    border: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 5px;
+    background-color: rgb(255, 136, 0);
+    cursor: pointer;
+}
+
 .report_user {
     width: 120px;
     height: 20px;
