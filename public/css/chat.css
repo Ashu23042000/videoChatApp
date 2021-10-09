@@ -174,16 +174,6 @@
     padding: 0 5px;
 }
 
-.showClick {
-    /* color: orangered; */
-    display: block;
-}
-
-.removeClick {
-    /* color: green; */
-    display: none;
-}
-
 .mikeoff {
     display: none;
 }

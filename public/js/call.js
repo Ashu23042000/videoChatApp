@@ -72,22 +72,34 @@ navigator.mediaDevices.getUserMedia({
 
     // video audio controls---------------
     const mikeon = document.querySelector(".mikeon");
+    const mikeoff = document.querySelector(".mikeoff");
+    const videoon = document.querySelector(".videoon");
+    const videooff = document.querySelector(".videooff");
+
 
     mikeon.addEventListener("click", () => {
         stream.getAudioTracks().forEach(track => track.enabled = !track.enabled);
-
-        mikeon.classList.toggle("showClick");
+        mikeon.style.display = "none";
+        mikeoff.style.display = "block";
 
     });
-
-
-    const videoon = document.querySelector(".videoon");
+    mikeoff.addEventListener("click", () => {
+        stream.getAudioTracks().forEach(track => track.enabled = !track.enabled);
+        mikeon.style.display = "block";
+        mikeoff.style.display = "none";
+    });
 
     videoon.addEventListener("click", () => {
         stream.getVideoTracks().forEach(track => track.enabled = !track.enabled);
+        videoon.style.display = "none";
+        videooff.style.display = "block";
 
-        videoon.classList.toggle("showClick");
+    });
 
+    videooff.addEventListener("click", () => {
+        stream.getVideoTracks().forEach(track => track.enabled = !track.enabled);
+        videoon.style.display = "block";
+        videooff.style.display = "none";
     });
 
 }).catch((err) => {
@@ -98,4 +110,3 @@ navigator.mediaDevices.getUserMedia({
 peer.on("open", (id) => {
     socket.emit("join_room", roomId, id);
 });
-
