@@ -6,23 +6,15 @@ const hamburger_navMenu = document.querySelector(".hamburger_navMenu");
 hamburger.addEventListener("click", () => {
     hamburger_navMenu.classList.toggle("show");
 });
-// console.log(roomId);
-
 
 
 if ('mediaDevices' in navigator && 'getUserMedia' in navigator.mediaDevices) {
-
-
 
     const peer = new Peer()
     const stream_section = document.querySelector(".stream_section");
     const myVideo = document.createElement("video");
     myVideo.muted = true;
     myVideo.classList.add("myStream");
-    // myVideo.width = 100;
-    // myVideo.height = 200;
-
-
 
 
     function addVideoStream(video, stream) {
@@ -39,8 +31,7 @@ if ('mediaDevices' in navigator && 'getUserMedia' in navigator.mediaDevices) {
     function connectToOtherUser(userId, stream) {
         const call = peer.call(userId, stream);
         const video = document.createElement("video");
-        // video.height = 200;
-        // video.width = 100;
+
         video.classList.add("otherStream");
         call.on("stream", (userVideoStream) => {
             addVideoStream(video, userVideoStream);
@@ -50,10 +41,14 @@ if ('mediaDevices' in navigator && 'getUserMedia' in navigator.mediaDevices) {
         });
     };
 
+
     navigator.mediaDevices.getUserMedia({
         // video: true,
         video: {
-            facingMode: 'user'
+            facingMode: 'user',
+            width: 400,
+            height: 300,
+            frameRate: 10
         },
         audio: true
     }).then((stream) => {
@@ -63,8 +58,6 @@ if ('mediaDevices' in navigator && 'getUserMedia' in navigator.mediaDevices) {
             const video = document.createElement("video");
             video.classList.add("otherStream");
             call.on("stream", (userVideoStream) => {
-                // video.height = 200;
-                // video.width = 100;
                 addVideoStream(video, userVideoStream);
             });
         });
