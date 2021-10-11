@@ -10,7 +10,7 @@ hamburger.addEventListener("click", () => {
 
 if ('mediaDevices' in navigator && 'getUserMedia' in navigator.mediaDevices) {
 
-    const peer = new Peer()
+    const peer = new Peer({ host: 'https://ashvideochatapp.herokuapp.com/', port: 443, secure: true })
     const stream_section = document.querySelector(".stream_section");
     const myVideo = document.createElement("video");
     myVideo.muted = true;
@@ -111,10 +111,8 @@ if ('mediaDevices' in navigator && 'getUserMedia' in navigator.mediaDevices) {
         socket.emit("join_room", roomId, id);
     });
 
-
 }
 else {
     alert("media device not supported");
 }
-
 
