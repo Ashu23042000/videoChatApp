@@ -8,9 +8,10 @@ hamburger.addEventListener("click", () => {
 });
 
 
+
 if ('mediaDevices' in navigator && 'getUserMedia' in navigator.mediaDevices) {
 
-    const peer = new Peer({ host: 'https://ashvideochatapp.herokuapp.com/', port: 443, secure: true })
+    const peer = new Peer()
     const stream_section = document.querySelector(".stream_section");
     const myVideo = document.createElement("video");
     myVideo.muted = true;
@@ -23,6 +24,7 @@ if ('mediaDevices' in navigator && 'getUserMedia' in navigator.mediaDevices) {
             video.play();
         });
         stream_section.appendChild(video);
+
     };
 
 
@@ -39,6 +41,7 @@ if ('mediaDevices' in navigator && 'getUserMedia' in navigator.mediaDevices) {
         call.on("close", () => {
             video.remove();
         });
+       
     };
 
 
@@ -81,7 +84,6 @@ if ('mediaDevices' in navigator && 'getUserMedia' in navigator.mediaDevices) {
             stream.getAudioTracks().forEach(track => track.enabled = !track.enabled);
             mikeon.style.display = "none";
             mikeoff.style.display = "block";
-
         });
         mikeoff.addEventListener("click", () => {
             stream.getAudioTracks().forEach(track => track.enabled = !track.enabled);
@@ -115,4 +117,6 @@ if ('mediaDevices' in navigator && 'getUserMedia' in navigator.mediaDevices) {
 else {
     alert("media device not supported");
 }
+
+
 
