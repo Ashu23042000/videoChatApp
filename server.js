@@ -30,8 +30,8 @@ app.use(flash());
 
 // event emitter config----
 
-const eventEmitter = new Emitter();
-app.set("eventEmitter", eventEmitter);
+// const eventEmitter = new Emitter();
+// app.set("eventEmitter", eventEmitter);
 
 
 // view engine----
@@ -121,10 +121,8 @@ io.on("connection", (socket) => {
 
     });
 
-
     // broadcasting all users details to user--
     socket.on("userConnected", (data) => {
-        // console.log(data);
         data.socketId = socket.id;
         if (!usersConnected[data.user_id]) {
             usersConnected[socket.id] = data;

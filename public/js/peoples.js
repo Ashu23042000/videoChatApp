@@ -68,7 +68,7 @@ function showConnectedUsers(data) {
                     </div>
                 
                  <button class="callBtn">
-                  <span>Call</span>
+                  <span>Start Conversation</span>
                   <input value=${JSON.stringify({ key: key, from: from, fromUserName: fromUserName })} type="hidden"></input>
                   </button>
                     `;

@@ -25,6 +25,11 @@
     margin: 8px 0 10px 0;
 }
 
+.brand h2 a {
+    text-decoration: none;
+    color: black;
+}
+
 .navMenu ul li {
     display: inline-block;
     margin: 15px 10px 10px 0;
@@ -81,8 +86,8 @@
 
 .backImg img {
     margin-top: 30px;
-    width: 650px;
-    height: 90%;
+    width: 600px;
+    height: 85%;
 }
 
 .sideContent {
