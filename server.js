@@ -1,7 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const app = express();
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 5000;
 const path = require("path");
 const http = require("http").createServer(app);
 const db = require("./db");
@@ -9,7 +9,7 @@ db();
 const session = require("express-session");
 const mongoDbStore = require("connect-mongo");
 const flash = require("express-flash");
-const Emitter = require("events");
+// const Emitter = require("events");
 
 
 // session config------
