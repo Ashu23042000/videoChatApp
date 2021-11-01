@@ -91,6 +91,8 @@ function showConnectedUsers(data) {
             // let a = btn.lastElementChild.value
             // console.log(JSON.parse(a));
             call(JSON.parse(btn.lastElementChild.value));
+
+
         });
     })
 }

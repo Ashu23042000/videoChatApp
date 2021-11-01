@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const userModel = require("../models/userModel");
-const logined_users = [];
 
 
 router.get("/", async (req, res) => {

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -20,14 +21,17 @@
     justify-content: space-between;
 }
 
-.brand h2 {
-    font-weight: 100;
-    margin: 8px 0 10px 0;
+.brand h1 {
+    margin: 0px 0 10px 0;
 }
 
-.brand h2 a {
+.brand h1 a {
+    font-weight: 500;
+    font-size: 36px;
     text-decoration: none;
+    font-family: 'Anton', sans-serif;
     color: black;
+    letter-spacing: 1px;
 }
 
 .navMenu ul li {
@@ -140,7 +144,14 @@
         margin: 10px;
     }
     .hamburger i {
-        font-size: 1.1rem;
+        font-size: 1.5rem;
+    }
+    .brand h1 {
+        margin: 5px 0 10px 0;
+    }
+    .brand h1 a {
+        font-weight: 400;
+        font-size: 28px;
     }
     .form {
         width: 90%;

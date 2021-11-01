@@ -4,7 +4,11 @@ const bcrypt = require("bcryptjs");
 const userModel = require("../models/userModel");
 
 router.get("/", (req, res) => {
-    res.render("signup", { flag: "" });
+    if (req.session.user) {
+        res.redirect("/");
+    } else {
+        res.render("signup", { flag: "" });
+    }
 });
 
 
